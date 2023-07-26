@@ -1,1 +1,25 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Markdown</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div id="markdown-content">
+        # Heading 1
+        ## Heading 2
+        *Italic Text*
+        **Bold Text**
+        - List Item 1
+        - List Item 2
+    </div>
+
+    <script>
+        const markdownContentElement = document.getElementById("markdown-content");
+        const markdownContent = markdownContentElement.textContent;
+        const htmlContent = marked(markdownContent);
+        markdownContentElement.innerHTML = htmlContent;
+    </script>
+</body>
+</html>
